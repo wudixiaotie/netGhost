@@ -48,21 +48,21 @@ end
 
 keyword = "手机"
 
-# (1..2).each do |page_num|
-#   list_page_p1 = $agent.get("http://search.jd.com/Search?keyword=#{keyword}&enc=utf-8&page=#{page_num}")
+(1..2).each do |page_num|
+  list_page_p1 = $agent.get("http://search.jd.com/Search?keyword=#{keyword}&enc=utf-8&page=#{page_num}")
 
-#   i = 0
+  i = 0
 
-#   list_page_p1.search("div[@class=lh-wrap]").each do |div|
-#     analyze_and_save(div, $coll)
+  list_page_p1.search("div[@class=lh-wrap]").each do |div|
+    analyze_and_save(div, $coll)
 
-#     i += 1
-#   end
+    i += 1
+  end
 
-#   list_page_p2 = $agent.get("http://search.jd.com/s.php?keyword=#{keyword}&enc=utf-8&qr=&qrst=UNEXPAND&et=&rt=1&click=&psort=&page=#{page_num + 1}&scrolling=y&start=#{i}&tpl=1_M&vt=1")
+  list_page_p2 = $agent.get("http://search.jd.com/s.php?keyword=#{keyword}&enc=utf-8&qr=&qrst=UNEXPAND&et=&rt=1&click=&psort=&page=#{page_num + 1}&scrolling=y&start=#{i}&tpl=1_M&vt=1")
 
 
-#   list_page_p2.search("div[@class=lh-wrap]").each do |div|
-#     analyze_and_save(div, $coll)
-#   end
-# end
+  list_page_p2.search("div[@class=lh-wrap]").each do |div|
+    analyze_and_save(div, $coll)
+  end
+end
